@@ -1,2 +1,2 @@
-## cpp
-Some programs using cpp
+## c++
+programs using cpp
