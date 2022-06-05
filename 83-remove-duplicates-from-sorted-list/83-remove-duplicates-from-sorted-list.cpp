@@ -17,11 +17,10 @@ public:
             return head;
         
         while(temp!=NULL && temp->next!=NULL){
-            while(temp!=NULL && temp->next!=NULL && temp->val == temp->next->val){
+            if( temp->val == temp->next->val){
                 temp->next=temp->next->next;
             }
-            
-            
+            else
             temp=temp->next;
         }
         
