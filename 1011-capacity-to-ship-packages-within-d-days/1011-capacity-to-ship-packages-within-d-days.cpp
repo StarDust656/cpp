@@ -9,7 +9,8 @@ public:
             
             if(sum>mid){
                 day++;
-                sum=weights[i];
+                sum=0;
+                i--;
                 
             }
             
