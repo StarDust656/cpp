@@ -12,42 +12,17 @@ public:
                 continue;
                 
             }
-            
-            if(s[i]==')'||s[i]=='}'||s[i]==']'){
-           
-                if(an.empty())
+             if(an.empty())
                     return false;
-                
-                else if(an.top()=='{'){
-                    if(!an.empty() &&s[i]=='}'){
-                         an.pop();
-                    }
-                    else 
-                        return false;
-                }
-                  else if(an.top()=='('){
-                    if(!an.empty() && s[i]==')'){
-                         an.pop();
-                        
-                    }
-                    else 
-                        return false;
-                }
-                else if(an.top()=='['){
-                    if(!an.empty() && s[i]==']'){
+            
+            if((s[i]==')'&& an.top()=='(') ||(s[i]=='}' && an.top()=='{')||(s[i]==']'&&an.top()=='[')){               
                         an.pop();
-                    }
-                    else 
-                        return false;
+                        
                 }
+                else
+                    return false;
             }            
         
-         
-        }
-        
-    if(an.empty())
-        return true;
-        else
-            return false;
+         return an.empty();
     }
 };
