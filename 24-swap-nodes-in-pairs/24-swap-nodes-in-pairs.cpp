@@ -14,18 +14,20 @@ public:
         if(head==NULL || head->next==NULL)
             return head;
         
-        ListNode*temp=head;
-        
-        
-        while(temp!=NULL && temp->next!=NULL){
+        ListNode*DNode= new ListNode();
+         ListNode*prev=DNode;
+         ListNode*curr=head;
+             
+        while(curr!=NULL && curr->next!=NULL){
             
-            int value=temp->val;
-            temp->val=temp->next->val;
-            temp->next->val=value;
+           prev->next=curr->next;
+            curr->next=prev->next->next;
+            prev->next->next=curr;
             
-            temp=temp->next->next;
+            prev=curr;
+            curr=curr->next;
         }
         
-        return head;
+        return DNode->next;
     }
 };
